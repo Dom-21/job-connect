@@ -1,0 +1,66 @@
+<div class="min-h-[calc(100ch-130px)] max-h-[calc(100vh-130px)] overflow-y-auto">
+    <div class="search-container">
+        <input class="bg-blue-200 text-black w-1/2 p-2 rounded-md" type="text" id="search" placeholder="Search jobs..."
+            (keyup)="search()" />
+        <button id="search-button" (click)="search()">Search</button>
+        <select id="sort-options" class="bg-blue-500 text-white w-fit p-2 rounded-md">
+            <option value="">Sort by</option>
+            <option value="title-asc">Title (A-Z)</option>
+            <option value="title-desc">Title (Z-A)</option>
+            <option value="experience">Experience Required</option>
+        </select>
+    </div>
+    
+    
+    <main>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 max-md:grid-cols-1 p-5 gap-5  text-white rounded-md">
+            @for (job of filtered_jobs; track job.title) {
+            <div class="bg-blue-400 text-black p-4  shadow-lg shadow-blue-500 rounded-md" (click)="openModal(job)">
+                <h3 class="job-title">{{job.title}}</h3>
+                <p class="company">Commpany: {{job.company}}</p>
+                <p class="requirements">Requirements: {{job.requirements}}</p>
+                <p class="salary">Salary: {{job.salary}}</p>
+            </div>
+            }
+        </div>
+        <!-- <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="jobs.count" [rowsPerPageOptions]="[10, 20, 30]" /> -->
+    </main>
+    
+    <div id="job-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-button">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p><strong>Company:</strong> <span id="modal-company"></span></p>
+            <p><strong>Description:</strong> <span id="modal-description"></span></p>
+            <p><strong>Requirements:</strong> <span id="modal-requirements"></span></p>
+            <p><strong>Location:</strong> <span id="modal-location"></span></p>
+            <p><strong>Salary:</strong> <span id="modal-salary"></span></p>
+            <p><strong>Skills:</strong> <span id="modal-skills"></span></p>
+            <p><strong>Qualification:</strong> <span id="modal-qualification"></span></p>
+            <p><strong>Year of Passing:</strong> <span id="modal-year"></span></p>
+            <p><strong>Percentage Criteria:</strong> <span id="modal-percentage"></span></p>
+            <p><strong>Interview Mode:</strong> <span id="modal-interview-mode"></span></p>
+            <p><strong>Interview Rounds:</strong> <span id="modal-interview-rounds"></span></p>
+            <p><strong>Career Page:</strong> <a id="modal-career-page" href="#" target="_blank">Company Career Page</a></p>
+        </div>
+    </div>
+    
+</div>
+
+<p-dialog header="{{currentJob.title}}" [(visible)]="visible" [modal]="true" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <div>
+        <h3 class="text-2xl font-bold"></h3>
+        <p>Company: {{currentJob.company}}</p>
+        <p>Requirements: {{currentJob.requirements}}</p>
+        <p>Salary: {{currentJob.salary}}</p>
+        <p>Location: {{currentJob.location}}</p>
+        <p>Skills: {{currentJob.skills}}</p>
+        <p>Qualification: {{currentJob.qualification}}</p>
+        <p>Year of Passing: {{currentJob.year}}</p>
+        <p>Percentage Criteria: {{currentJob.percentage}}</p>
+        <p>Interview Mode: {{currentJob.interviewMode}}</p>
+        <p>Interview Rounds: {{currentJob.interviewRounds}}</p>
+        <p>Career Page: <a href="{{currentJob.careerPage}}" target="_blank" class="underline text-blue-500">Company Career Page</a></p>
+        
+    </div>
+</p-dialog>

@@ -1,0 +1,61 @@
+<div class="bg-blue-200 p-4 min-h-[calc(100vh-130px)] max-h-[calc(100vh-130px)] overflow-y-auto">
+
+    <div class="flex py-5 justify-center items-center gap-4">
+        <h1 class="text-2xl my-2 py-4 font-bold text-center text-gray-900">Signup for JobConnect</h1>
+    </div>
+
+
+
+    <div class="max-w-[calc(60vw)] mx-auto p-4 bg-white rounded-md shadow-md">
+        <form [formGroup]="form">
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="name">Name</label>
+                <input type="text" formControlName="name" class="w-full p-2 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="email">Email</label>
+                <input type="email" formControlName="email" class="w-full p-2 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="password">Password</label>
+                <input type="password" formControlName="password" class="w-full p-2 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="confirmPassword">Confirm
+                    Password</label>
+                <input type="password" formControlName="confirmPassword" class="w-full p-2 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="phone">Phone</label>
+                <input type="text" formControlName="phone" class="w-full p-2 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="skills">Skills</label>
+                <input type="text" formControlName="skills" class="w-full p-2 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="education">Education</label>
+                <input type="text" formControlName="education" class="w-full p-2 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="year_of_passing">Year of
+                    Passing</label>
+                <input type="text" formControlName="year_of_passing" class="w-full p-2 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="percentage">Percentage</label>
+                <input type="text" formControlName="percentage" class="w-full p-2 rounded-md">
+            </div>
+            <div class="flex justify-center items-center gap-4">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                (click)="onSubmit()">Sign
+                    Up</button>
+                <a (click)="navigate('/sign-in')" class="underline text-blue-500 rounded-md cursor-pointer">Sign
+                    In</a>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>

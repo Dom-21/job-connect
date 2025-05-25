@@ -1,0 +1,75 @@
+<div class="min-h-[calc(100vh-130px)] max-h-[calc(100vh-130px)] mx-auto w-full overflow-y-auto bg-blue-400">
+    <div class="my-10 mx-auto max-w-[calc(80vw)] text-white p-4 rounded-md">
+        <div class="w-full px-10 py-2 items-center justify-center flex from-blue-500 to-blue-600 rounded-md">
+            <h1 class="text-2xl text-center text-black font-bold mb-4">Job Description</h1>
+        </div>
+        <form [formGroup]="jobForm" class="grid grid-cols-2 gap-4" w-full>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="title">Title</label>
+                <input type="text" id="title" formControlName="title" class="w-full p-2 rounded-md text-black"> 
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="company">Company</label>
+                <input type="text" id="company" formControlName="company" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="description">Description</label>
+                <textarea type="text" id="description" formControlName="description" class="w-full p-2 rounded-md text-black"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="requirements">Requirements</label>
+                <textarea type="text" id="requirements" formControlName="requirements" class="w-full p-2 rounded-md text-black"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="designation">Designation</label>
+                <input type="text" id="designation" formControlName="designation" class="w-full p-2 rounded-md text-black">
+            </div>
+            
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="salary">Salary</label>
+                <input type="number" id="salary" formControlName="salary" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="location">Location</label>
+                <input type="text" id="location" formControlName="location" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="skills">Skills</label>
+                <input type="text" id="skills" formControlName="skills" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="year">Year</label>
+                <input type="number" id="year" formControlName="year" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="qualifications">Qualifications</label>
+                <input type="text" id="qualifications" formControlName="qualifications" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="percentage">Percentage</label>
+                <input type="number" id="percentage" formControlName="percentage" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="interviewMode">Interview Mode</label>
+                <input type="text" id="interviewMode" formControlName="interviewMode" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="interviewRounds">Interview
+                    Rounds</label>
+                <input type="number" id="interviewRounds" formControlName="interviewRounds" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="form-group">
+                <label class="block mb-2 text-sm font-medium text-gray-900 " for="careerPage">Career Page</label>
+                <input type="url" id="careerPage" formControlName="careerPage" class="w-full p-2 rounded-md text-black">
+            </div>
+            <div class="flex justify-end gap-4 mt-4 col-span-2">
+                <button type="reset" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700" (click)="resetForm()">Reset</button>
+                <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700" (click)="submitForm()">Submit</button>
+            </div>
+
+
+
+
+        </form>
+    </div>
+</div>

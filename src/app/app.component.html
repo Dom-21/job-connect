@@ -1,0 +1,35 @@
+<div class="min-h-[calc(100vh-150px)] max-h-[calc(100vh-150px)]">
+  <header class="sticky top-0" >
+    <div class="navbar p-4 rounded-lg">
+        <div class="hamburger" id="hamburger-menu" (click)="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <h1 class="logo">JobConnect Dashboard</h1>
+        <div class="dark-mode-toggle">
+            <!-- <label for="dark-mode-switch">Dark Mode</label>
+            <input type="checkbox" id="dark-mode-switch" (change)="toggleDarkMode()"> -->
+        </div>
+    </div>
+    <nav id="dropdown-menu" [class.show]="isMenuOpen">
+        <ul>
+            <li class="cursor-pointer"><a (click)="navigate('/dashboard')">Home</a></li>  
+            <li class="cursor-pointer"><a (click)="navigate('/about')">About</a></li>
+            <li class="cursor-pointer"><a (click)="navigate('/job-portal')">Job Portal</a></li>
+            <li class="cursor-pointer"><a (click)="navigate('/contact')">Contact</a></li>
+            <!-- <li><a href="../static/profile.html">Edit Profile</a></li> -->
+            <li><a class="cursor-pointer" (click)="navigate('/job-description')">Job Detail Form Submission</a></li>
+            <!-- <li><a class="cursor-pointer" (click)="navigate('/sign-in')">Sign In</a></li> -->
+            <li><a class="cursor-pointer" (click)="navigate('/')">Sign Out</a></li>
+            <!-- <li><a class="cursor-pointer" (click)="navigate('/exit')">Exit</a></li> -->
+        </ul>
+    </nav>
+</header>
+
+  <router-outlet></router-outlet>
+
+  <footer class=" bg-gray-800 p-2 text-center text-white sticky bottom-0">
+    <p>&copy; 2024 JobConnect. All rights reserved.</p>
+  </footer>
+</div>

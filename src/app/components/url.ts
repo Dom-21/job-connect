@@ -1,0 +1,2 @@
+export const API_URL="http://127.0.0.1:3000"+'/' //Dont touch the / in the end of the url, it is important for the backend to work properly.
+// export const API_URL="http://192.168.172.40:3000"+'/' //Dont touch the / in the end of the url, it is important for the backend to work properly.
